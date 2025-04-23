@@ -1,0 +1,35 @@
+package collections.Queue;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.concurrent.ArrayBlockingQueue;
+
+/**
+ * Author: PRASANT
+ * Date: 21/03/25
+ */
+
+public class QueueDemo {
+	public static void main(String[] args) {
+		// LinkedList
+		Queue<Integer> queue1 = new LinkedList<>();
+		queue1.add(1);
+		System.out.println(queue1.size());
+
+		System.out.println(queue1.remove()); // throws exception if empty
+		System.out.println(queue1.poll());
+
+		queue1.add(2);
+		System.out.println(queue1.element()); // throws exception if empty
+		System.out.println(queue1.peek());
+
+		// ArrayBlockingQueue
+		Queue<Integer> queue2 = new ArrayBlockingQueue<>(2); // fixed size
+		System.out.println(queue2.add(1)); // true
+		System.out.println(queue2.offer(2)); // true
+
+//		System.out.println(queue2.add(3)); // throws error
+		System.out.println(queue2.offer(3)); // false
+		System.out.println(queue2);
+	}
+}
